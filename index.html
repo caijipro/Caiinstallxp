@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cai Install Xp - Steam入库工具</title>
+    <!-- 设置Favicon -->
+    <link rel="icon" type="image/png" href="https://pic1.imgdb.cn/item/679606c5d0e0a243d4f81340.png">
+    <style>
+        /* 基础样式 */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(135deg, #0072ff, #00c6ff);
+            padding: 80px 20px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        header h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            animation: fadeIn 2s ease-in-out;
+        }
+        header p {
+            font-size: 1.5rem;
+            margin: 10px 0 0;
+            animation: fadeIn 3s ease-in-out;
+        }
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: -10%;
+            width: 120%;
+            height: 100px;
+            background: rgba(255, 255, 255, 0.1);
+            transform: rotate(-3deg);
+        }
+
+        /* 主要内容区域 */
+        section {
+            padding: 60px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        h2 {
+            color: #00c6ff;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+        }
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: #00c6ff;
+            border-radius: 2px;
+        }
+
+        /* 功能列表 */
+        .features, .steps, .testimonials {
+            background-color: #2a2a2a;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .features:hover, .steps:hover, .testimonials:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 198, 255, 0.4);
+        }
+        .features ul, .steps ol {
+            padding-left: 20px;
+        }
+        .features li, .steps li {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        /* 下载按钮 */
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #0072ff, #00c6ff);
+            color: white;
+            padding: 20px 40px;
+            font-size: 1.5rem;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin: 20px 0;
+        }
+        .download-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 198, 255, 0.6);
+        }
+
+        /* 用户评价 */
+        .testimonials {
+            background-color: #333;
+            padding: 30px;
+            border-radius: 15px;
+        }
+        .testimonial {
+            margin-bottom: 20px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        .testimonial:hover {
+            transform: translateY(-5px);
+        }
+        .testimonial p {
+            font-style: italic;
+            color: #ccc;
+            margin: 0;
+        }
+        .testimonial strong {
+            color: #00c6ff;
+            display: block;
+            margin-top: 10px;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #222;
+            padding: 40px 20px;
+            text-align: center;
+            color: #ccc;
+            margin-top: 60px;
+        }
+        footer a {
+            color: #00c6ff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        footer a:hover {
+            color: #0072ff;
+        }
+
+        /* 版权信息 */
+        .copyright {
+            font-size: 0.9rem;
+            color: #888;
+            margin-top: 20px;
+        }
+
+        /* 动画 */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* 6号清单库特殊样式 */
+        .highlight {
+            color: #ffcc00;
+            font-weight: bold;
+            animation: float 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cai Install Xp</h1>
+        <p>您的Steam游戏清单管理神器</p>
+    </header>
+
+    <section>
+        <h2>产品介绍</h2>
+        <div class="features">
+            <p>Cai Install Xp是一款专为Steam玩家设计的免费入库工具，由“菜玩社区”副站长开发，旨在帮助玩家轻松管理游戏清单，享受更多游戏乐趣。</p>
+            <ul>
+                <li><strong>6大清单密钥库</strong>：涵盖约25万+游戏清单，满足您的多样化需求。</li>
+                <li><strong>完全免费</strong>：无需付费，无广告干扰，纯粹为玩家服务。</li>
+                <li><strong>安全无毒</strong>：搭配SteamTools使用，确保您的账号和设备安全。</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>使用方式</h2>
+        <div class="steps">
+            <ol>
+                <li><strong>输入游戏APPID</strong>：前往<a href="https://steamui.com" target="_blank" style="color: #00c6ff;">steamui.com</a>查询您想游玩的游戏ID，在工具中输入APPID并按下回车键。</li>
+                <li><strong>选择清单库</strong>：
+                    <ul>
+                        <li><strong>1号清单库</strong>：更新速度快，游戏数量较多。</li>
+                        <li><strong>2号清单库</strong>：更新速度较快，游戏数量一般。</li>
+                        <li><strong>3号清单库</strong>：目前为停止更新状态，不建议使用。</li>
+                        <li><strong>4号清单库</strong>：更新较快，游戏种类丰富。</li>
+                        <li><strong>5号清单库</strong>：更新算快，适合尝鲜新游。</li>
+                        <li><strong class="highlight">6号清单库</strong>：<span class="highlight">最近更新！新增2万+清单，每月更新。</span></li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <section>
+        <h2>立即下载</h2>
+        <p>点击下方按钮，免费获取Cai Install Xp，开启您的Steam游戏之旅！</p>
+        <a href="https://i-481.wwentua.com:446/03011300225455734bb/2025/03/01/56ca790d7a85c3c9370ad3721ce12db9.zip?st=SwkYTSL0DU2B-cybZ1cg8w&e=1740809388&b=UUBaOwBpUXRTbwA4ACMCcgk9XGwFaAMlCCMPclBmX3NVNQ0_aVHpUKwA8UXc_c&fi=225455734&pid=122-97-201-191&up=2&mp=0&co=0" class="download-btn">下载Cai Install Xp</a>
+    </section>
+
+    <section>
+        <h2>用户评价</h2>
+        <div class="testimonials">
+            <div class="testimonial">
+                <p>“Cai Install Xp真的太方便了！以前找游戏清单特别麻烦，现在一键搞定，强烈推荐！”</p>
+                <strong>—— Steam玩家小菜</strong>
+            </div>
+            <div class="testimonial">
+                <p>“免费又安全，搭配SteamTools使用毫无压力，感谢开发者！”</p>
+                <strong>—— 游戏爱好者大熊</strong>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>如有任何问题或建议，欢迎通过以下方式联系我们：</p>
+        <p><strong>邮箱</strong>：support@caiplay.com | <strong>社区</strong>：<a href="https://caiplay.com" target="_blank">菜玩社区</a></p>
+        <div class="copyright">
+            &copy; Copyright 2024-2025 pvzcxw-Cai Install Xp
+
+        </div>
+    </footer>
+</body>
+</html>
