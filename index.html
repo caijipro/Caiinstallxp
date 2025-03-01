@@ -12,10 +12,36 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #1a1a1a;
-            color: #ffffff;
+            background-color: #1a1a1a; /* 默认夜间模式背景色 */
+            color: #ffffff; /* 默认夜间模式文字颜色 */
             line-height: 1.6;
+            scroll-behavior: smooth; /* 平滑滚动 */
+            transition: background-color 0.3s ease, color 0.3s ease; /* 添加过渡效果 */
         }
+
+        /* 白日模式样式 */
+        body.light-mode {
+            background-color: #f5f5f5; /* 白日模式背景色 */
+            color: #333; /* 白日模式文字颜色 */
+        }
+
+        /* 提示信息 */
+        .time-notification {
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #4caf50; /* 绿色背景 */
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            z-index: 1001;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            display: none; /* 默认隐藏 */
+        }
+
+        /* 顶部标题和背景图 */
         header {
             background: linear-gradient(135deg, #0072ff, #00c6ff);
             padding: 80px 20px;
@@ -45,6 +71,55 @@
             transform: rotate(-3deg);
         }
 
+        /* 模式切换按钮 */
+        .mode-toggle {
+            position: fixed;
+            top: 14px; /* 调整按钮位置，与导航栏底部对齐 */
+            left: 20px;
+            background: rgba(42, 42, 42, 0.9);
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 1000;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .mode-toggle:hover {
+            background-color: #00c6ff;
+            color: #ffffff;
+        }
+        .light-mode .mode-toggle {
+            background-color: #ffffff;
+            color: #333;
+            border: 1px solid #ccc;
+        }
+        .light-mode .mode-toggle:hover {
+            background-color: #00c6ff;
+            color: #ffffff;
+        }
+
+        /* 导航栏 */
+        nav {
+            position: fixed;
+            top: 0;
+            right: 0;
+            background: rgba(42, 42, 42, 0.9);
+            padding: 10px 20px;
+            border-bottom-left-radius: 10px;
+            z-index: 1000;
+        }
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #00c6ff;
+        }
+
         /* 主要内容区域 */
         section {
             padding: 60px 20px;
@@ -71,22 +146,26 @@
         }
 
         /* 功能列表 */
-        .features, .steps, .testimonials {
+        .features, .steps, .testimonials, .changelog, .blacklist {
             background-color: #2a2a2a;
             padding: 30px;
             border-radius: 15px;
             margin-bottom: 30px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
         }
-        .features:hover, .steps:hover, .testimonials:hover {
+        .light-mode .features, .light-mode .steps, .light-mode .testimonials, .light-mode .changelog, .light-mode .blacklist {
+            background-color: #ffffff;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        .features:hover, .steps:hover, .testimonials:hover, .changelog:hover, .blacklist:hover {
             transform: translateY(-5px);
             box-shadow: 0 12px 25px rgba(0, 198, 255, 0.4);
         }
-        .features ul, .steps ol {
+        .features ul, .steps ol, .changelog ul, .blacklist ul {
             padding-left: 20px;
         }
-        .features li, .steps li {
+        .features li, .steps li, .changelog li, .blacklist li {
             margin-bottom: 15px;
             font-size: 1.1rem;
         }
@@ -108,11 +187,26 @@
             box-shadow: 0 8px 20px rgba(0, 198, 255, 0.6);
         }
 
+        /* 版本信息 */
+        .version-info {
+            font-size: 1rem;
+            color: #888;
+            margin-left: 20px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .light-mode .version-info {
+            color: #666;
+        }
+
         /* 用户评价 */
         .testimonials {
             background-color: #333;
             padding: 30px;
             border-radius: 15px;
+        }
+        .light-mode .testimonials {
+            background-color: #f0f0f0;
         }
         .testimonial {
             margin-bottom: 20px;
@@ -121,6 +215,9 @@
             border-radius: 10px;
             transition: transform 0.3s ease;
         }
+        .light-mode .testimonial {
+            background: rgba(0, 0, 0, 0.05);
+        }
         .testimonial:hover {
             transform: translateY(-5px);
         }
@@ -128,6 +225,9 @@
             font-style: italic;
             color: #ccc;
             margin: 0;
+        }
+        .light-mode .testimonial p {
+            color: #666;
         }
         .testimonial strong {
             color: #00c6ff;
@@ -143,6 +243,10 @@
             color: #ccc;
             margin-top: 60px;
         }
+        .light-mode footer {
+            background-color: #e0e0e0;
+            color: #333;
+        }
         footer a {
             color: #00c6ff;
             text-decoration: none;
@@ -157,6 +261,9 @@
             font-size: 0.9rem;
             color: #888;
             margin-top: 20px;
+        }
+        .light-mode .copyright {
+            color: #666;
         }
 
         /* 动画 */
@@ -178,12 +285,30 @@
     </style>
 </head>
 <body>
+    <!-- 提示信息 -->
+    <div class="time-notification" id="time-notification"></div>
+
+    <!-- 模式切换按钮 -->
+    <button class="mode-toggle" onclick="toggleMode()">切换到白日模式</button>
+
+    <!-- 导航栏 -->
+    <nav>
+        <a href="#introduction">介绍</a>
+        <a href="#tutorial">教程</a>
+        <a href="#changelog">更新</a>
+        <a href="#blacklist">黑名单</a>
+        <a href="#download">下载</a>
+        <a href="#testimonials">评价</a>
+    </nav>
+
+    <!-- 顶部标题和背景图 -->
     <header>
         <h1>Cai Install Xp</h1>
-        <p>您的Steam游戏清单管理神器</p>
+        <p>您的Steam游戏清单下载神器</p>
     </header>
 
-    <section>
+    <!-- 介绍 -->
+    <section id="introduction">
         <h2>产品介绍</h2>
         <div class="features">
             <p>Cai Install Xp是一款专为Steam玩家设计的免费入库工具，由“菜玩社区”副站长开发，旨在帮助玩家轻松管理游戏清单，享受更多游戏乐趣。</p>
@@ -195,7 +320,8 @@
         </div>
     </section>
 
-    <section>
+    <!-- 教程 -->
+    <section id="tutorial">
         <h2>使用方式</h2>
         <div class="steps">
             <ol>
@@ -214,13 +340,43 @@
         </div>
     </section>
 
-    <section>
-        <h2>立即下载</h2>
-        <p>点击下方按钮，免费获取Cai Install Xp，开启您的Steam游戏之旅！</p>
-        <a href="https://i-481.wwentua.com:446/03011300225455734bb/2025/03/01/56ca790d7a85c3c9370ad3721ce12db9.zip?st=SwkYTSL0DU2B-cybZ1cg8w&e=1740809388&b=UUBaOwBpUXRTbwA4ACMCcgk9XGwFaAMlCCMPclBmX3NVNQ0_aVHpUKwA8UXc_c&fi=225455734&pid=122-97-201-191&up=2&mp=0&co=0" class="download-btn">下载Cai Install Xp</a>
+    <!-- 更新日志 -->
+    <section id="changelog">
+        <h2>更新日志</h2>
+        <div class="changelog">
+            <ul>
+                <li><strong>2025年2月28日</strong></li>
+                <li>1. 加入最新2万的清单库，在选择清单库时选择数字六即可。</li>
+                <li>2. 添加批量入库功能。目前可输入多个APPID，只需要在输入时用英文逗号隔开即可，并且支持链接。</li>
+                <li>3. 修复了网络问题。</li>
+                <li>4. 删除多余的无关代码及函数。</li>
+            </ul>
+        </div>
     </section>
 
-    <section>
+    <!-- 黑名单 -->
+    <section id="blacklist">
+        <h2>入库工具黑名单</h2>
+        <div class="blacklist">
+            <ul>
+                <li>
+                    <strong>1. luckygametools</strong><br>
+                    拉黑原因：该软件完整版价格超出想象，同时开发者与管理员等内部成员使用不文明语言辱骂他人。并且会在运行过该exe程序下的电脑内进行挖矿操作，对使用luckygametools者的计算机造成严重影响。
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 下载 -->
+    <section id="download">
+        <h2>立即下载</h2>
+        <p>点击下方按钮，免费获取Cai Install Xp，开启您的Steam游戏之旅！</p>
+        <a href="https://cdn.jsdelivr.net/gh/Steam-Games-888/Caiinstallxp/Cai%20install%20xp1.23p2.zip" class="download-btn">下载Cai Install Xp</a>
+        <span class="version-info">当前就绪下载版本：1.23p2</span>
+    </section>
+
+    <!-- 评价 -->
+    <section id="testimonials">
         <h2>用户评价</h2>
         <div class="testimonials">
             <div class="testimonial">
@@ -236,11 +392,51 @@
 
     <footer>
         <p>如有任何问题或建议，欢迎通过以下方式联系我们：</p>
-        <p><strong>邮箱</strong>：3636336117@qq.com | <strong>社区</strong>：<a href="https://caigamer.com" target="_blank">菜玩社区</a></p>
+        <p><strong>邮箱</strong>：<a href="mailto:3636336117@qq.com">3636336117@qq.com</a> | <strong>社区</strong>：<a href="https://caigamer.com" target="_blank">菜玩社区</a></p>
         <div class="copyright">
-            &copy; Copyright 2024-2025 pvzcxw-Cai Install Xp
-
+            &copy; Copyright 2024-2025 pvzcxw-Cai Install Xp (网页由𝙅 by car™提供技术支持)
         </div>
     </footer>
+
+    <script>
+        // 检测当前时间并切换模式
+        function checkTimeAndSetMode() {
+            const now = new Date();
+            const hours = now.getHours();
+            const notification = document.getElementById('time-notification');
+
+            // 白天模式：5:30 - 18:30
+            if (hours >= 5 && hours < 18) {
+                document.body.classList.add('light-mode');
+                notification.textContent = '检测到为白天，已自动更改网页配色~';
+            } else {
+                document.body.classList.remove('light-mode');
+                notification.textContent = '检测到为夜间，已自动更改网页配色~';
+            }
+
+            // 显示提示信息
+            notification.style.display = 'block';
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 5000); // 5秒后隐藏提示
+        }
+
+        // 模式切换功能
+        function toggleMode() {
+            const body = document.body;
+            const modeToggle = document.querySelector('.mode-toggle');
+
+            if (body.classList.contains('light-mode')) {
+                body.classList.remove('light-mode');
+                modeToggle.textContent = '切换到白日模式';
+            } else {
+                body.classList.add('light-mode');
+                modeToggle.textContent = '切换到夜间模式';
+            }
+        }
+
+        // 页面加载时检测时间并设置模式
+        window.onload = checkTimeAndSetMode;
+    </script>
 </body>
 </html>
