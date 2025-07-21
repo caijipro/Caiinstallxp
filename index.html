@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cai Install Xp - Steam入库工具</title>
+    <title>Cai Install Xp - Steam入库工具 全新GUI版 完全免费</title>
     <!-- 设置Favicon -->
     <link rel="icon" type="image/png" href="https://pic1.imgdb.cn/item/679606c5d0e0a243d4f81340.png">
     <style>
@@ -16,7 +16,7 @@
             color: #ffffff; /* 默认夜间模式文字颜色 */
             line-height: 1.6;
             scroll-behavior: smooth; /* 平滑滚动 */
-            transition: background-color 0.3s ease, color 0.3s ease; /* 添加过渡效果 */
+            transition: background-color 0.3 ease, color 0.3 ease; /* 添加过渡效果 */
         }
 
         /* 白日模式样式 */
@@ -53,12 +53,12 @@
         header h1 {
             font-size: 3.5rem;
             margin: 0;
-            animation: fadeIn 2s ease-in-out;
+            animation: fadeIn 2 ease-in-out;
         }
         header p {
             font-size: 1.5rem;
             margin: 10px 0 0;
-            animation: fadeIn 3s ease-in-out;
+            animation: fadeIn 3 ease-in-out;
         }
         header::after {
             content: '';
@@ -83,7 +83,7 @@
             border-radius: 5px;
             cursor: pointer;
             z-index: 1000;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            transition: background-color 0.3 ease, color 0.3 ease;
         }
         .mode-toggle:hover {
             background-color: #00c6ff;
@@ -114,7 +114,7 @@
             text-decoration: none;
             margin: 0 10px;
             font-size: 1rem;
-            transition: color 0.3s ease;
+            transition: color 0.3 ease;
         }
         nav a:hover {
             color: #00c6ff;
@@ -213,7 +213,7 @@
             padding: 20px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
-            transition: transform 0.3s ease;
+            transition: transform 0.3 ease;
         }
         .light-mode .testimonial {
             background: rgba(0, 0, 0, 0.05);
@@ -250,7 +250,7 @@
         footer a {
             color: #00c6ff;
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: color 0.3 ease;
         }
         footer a:hover {
             color: #0072ff;
@@ -280,7 +280,7 @@
         .highlight {
             color: #ffcc00;
             font-weight: bold;
-            animation: float 3s ease-in-out infinite;
+            animation: float 3 ease-in-out infinite;
         }
     </style>
 </head>
@@ -303,8 +303,8 @@
 
     <!-- 顶部标题和背景图 -->
     <header>
-        <h1>Cai Install Xp</h1>
-        <p>您的Steam游戏清单管理神器</p>
+        <h1>Cai Install Xp 全新GUI版本 完全免费</h1>
+        <p>您的Steam游戏白嫖神器</p>
     </header>
 
     <!-- 介绍 -->
@@ -328,12 +328,13 @@
                 <li><strong>输入游戏APPID</strong>：前往<a href="https://steamui.com" target="_blank" style="color: #00c6ff;">steamui.com</a>查询您想游玩的游戏ID，在工具中输入APPID并按下回车键。</li>
                 <li><strong>选择清单库</strong>：
                     <ul>
-                        <li><strong>1号清单库</strong>：更新速度快，游戏数量较多。</li>
-                        <li><strong>2号清单库</strong>：更新速度较快，游戏数量一般。</li>
-                        <li><strong>3号清单库</strong>：目前为停止更新状态，不建议使用。</li>
-                        <li><strong>4号清单库</strong>：更新较快，游戏种类较多。</li>
-                        <li><strong>5号清单库</strong>：更新算快，适合冷门游戏。</li>
-                        <li><strong class="highlight">6号清单库</strong>：<span class="highlight">最近更新！新增3万+清单，清单每月更新。</span></li>
+                        <li><strong>1号清单库</strong>：不建议。</li>
+                        <li><strong>2号清单库</strong>：中等。</li>
+                        <li><strong>3号清单库</strong>：还行。</li>
+                        <li><strong>4号清单库</strong>：推荐。</li>
+                        <li><strong>5号清单库</strong>：推荐。</li>
+                        <li><strong>6号清单库</strong>：不建议！</li>
+                        <li><strong class="highlight">7号清单库</strong>：<span class="highlight">建议！</span></li>
                     </ul>
                 </li>
             </ol>
@@ -345,14 +346,10 @@
         <h2>更新日志</h2>
         <div class="changelog">
             <ul>
-                <li><strong>2025年3月21日</strong></li>
-                <li>1. 删除某个cdn，修复了因为他没付费导致出现402报错。</li>
-                <li>2. 添加弹窗通知中的不再显示按钮,这样会自动保存一个配置文件。</li>
-                <li>3. 添加了输出提示，更好的找到错误。</li>
-                <li>4. 删除多余的无关代码及函数。</li>
-                <li>5. 修改的通知公告,防止恶意引流。</li>
-                <li>6. 关闭程序ssl验证。</li>
-                <li>7. 添加了DLC自动检索（目前正在测试，可能不可用）。</li>
+                <li><strong>2025年7月11日</strong></li>
+                <li>1.【修复】1.取消了固定版本这一选项，D加密游戏不要使用自动更新即可（使用以前版本选择固定版本时，不会下载清单，导致无法下载游戏）</li>
+                <li>2.【更改】2.更改.manifest文件同时添加到原生depotcache文件夹以及插件depotcache文件夹</li>
+                <li>3.【取消】3.取消了抵制倒卖文档的链接跳转（发了视频了感觉没什么必要了）</li>
             </ul>
         </div>
     </section>
@@ -364,7 +361,7 @@
             <ul>
                 <li>
                     <strong>1. luckygametools</strong><br>
-                    拉黑原因：该软件完整版价格超出想象，同时开发者与管理员等内部成员使用不文明语言辱骂他人。并且会在运行过该exe程序下的电脑内进行挖矿操作，对使用luckygametools者的计算机造成严重影响。
+                    拉黑原因：该软件完整版价格超出想象，同时开发者与管理员等内部成员使用不文明语言辱骂他人。并且会在运行过该exe程序下的电脑内进行挖矿操作，对使用luckygametools者的计算机造成严重影响。极其不建议使用
                 </li>
             </ul>
         </div>
@@ -373,9 +370,9 @@
     <!-- 下载 -->
     <section id="download">
         <h2>立即下载</h2>
-        <p>点击下方按钮，免费获取Cai Install Xp，开启您的Steam游戏之旅！</p>
-        <a href="https://wwqx.lanzoul.com/b00tbe4gxe" class="download-btn">下载Cai Install Xp</a>
-        <span class="version-info">下载密码：caiji 当前就绪下载版本：1.31a1 fix1（官方正式版）</span>
+        <p>点击下方按钮，下载Cai Install Xp，开启您的Steam游戏之旅！</p>
+        <a href="https://pan.quark.cn/s/f9a808d28773#/list/share/3ba714f2740a4decb5f28f09011ed621-%E7%BE%A4%E7%B2%89%E4%B8%9D%E7%A6%8F%E5%88%A9*101%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%202025%E5%B9%B4/7c72a57575d04ab6a99329f04b47dbc8-%E7%99%BD%E5%AB%96/b75d19d6379e46a2a741825300c12379-Steam%E5%AE%8C%E5%85%A8%E5%85%8D%E8%B4%B9%E5%85%A5%E5%BA%93%E5%B7%A5%E5%85%B7*101caiinstall%20%E8%8F%9C%E7%8E%A9%E5%87%BA%E5%93%81%206%E5%A4%A7%E6%B8%85%E5%8D%95%E5%BA%93" class="download-btn">下载Cai Install Xp</a>
+        <span class="version-info">转存并下载即可！</span>
     </section>
 
     <!-- 评价 -->
@@ -388,11 +385,11 @@
             </div>
             <div class="testimonial">
                 <p>“免费又安全，搭配SteamTools使用毫无压力，感谢开发者！”</p>
-                <strong>—— 游戏爱好者大熊</strong>
+                <strong>—— 游戏爱好者陈凯文</strong>
             </div>
             <div class="testimonial">
-                <p>“Cai Install Xp 让我的Steam游戏下载变得超级简单！6号清单库更新非常及时，每个月都有新游戏加入，太棒了！”</p>
-                <strong>—— 游戏达人小杰</strong>
+                <p>“Cai Install Xp 让我的Steam游戏下载变得超级简单！7号清单库更新非常及时，每个月都有新游戏加入，太棒了！”</p>
+                <strong>—— 菜玩社区R星</strong>
             </div>
         </div>
     </section>
@@ -401,7 +398,7 @@
         <p>如有任何问题或建议，欢迎通过以下方式联系我们：</p>
         <p><strong>邮箱</strong>：<a href="mailto:3636336117@qq.com">3636336117@qq.com</a> | <strong>社区</strong>：<a href="https://caigamer.com" target="_blank">菜玩社区</a></p>
         <div class="copyright">
-            &copy; Copyright 2024-2025 pvzcxw-Cai Install Xp (网页由𝙅 by car™提供技术支持)
+            &copy; Copyright 2024-2025 pvzcxw-Cai Install Xp (网页由nginx.提供技术支持)
         </div>
     </footer>
 
