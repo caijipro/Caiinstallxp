@@ -282,6 +282,88 @@
             font-weight: bold;
             animation: float 3 ease-in-out infinite;
         }
+
+        /* 侧边广告样式 */
+        .sidebar-ad {
+            position: fixed;
+            top: 100px; /* 距离顶部的距离 */
+            width: 200px; /* 侧边广告宽度 */
+            height: 500px; /* 增加高度 */
+            background: linear-gradient(135deg, #ffcc00, #ff9900); /* 渐变背景 */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            animation: float 3s ease-in-out infinite;
+            color: #333; /* 文字颜色 */
+            display: flex;
+            flex-direction: column; /* 纵向排列 */
+            justify-content: space-between; /* 在上下之间分配空间 */
+        }
+
+        .sidebar-ad h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .sidebar-ad p {
+            font-size: 1rem;
+        }
+
+        .sidebar-ad button {
+            background-color: #0072ff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s, transform 0.3s;
+            margin-top: auto; /* 确保按钮在底部 */
+        }
+
+        .sidebar-ad button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        /* 广告样式 */
+        #advertisement {
+            background: linear-gradient(135deg, #ffcc00, #ff9900); /* 渐变背景 */
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        #advertisement h2 {
+            color: #333;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        #advertisement p {
+            color: #333;
+            font-size: 1.5rem;
+        }
+
+        #advertisement button {
+            background-color: #0072ff;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        #advertisement button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
     </style>
 </head>
 <body>
@@ -306,6 +388,22 @@
         <h1>Cai Install Xp 全新GUI版本 完全免费</h1>
         <p>您的Steam游戏白嫖神器</p>
     </header>
+
+    <!-- 左侧广告 -->
+    <div class="sidebar-ad" style="left: 20px;">
+        <h2>广告</h2>
+        <p>菜玩俱乐部招募会员</p>
+        <p>减少折腾，时间留给游戏。永久会员支持实时更新，支持创意工坊，更有大量D加密游戏等你玩。</p>
+        <button onclick="openQQGroup()">前往</button> <!-- 确保按钮在底部 -->
+    </div>
+
+    <!-- 右侧广告 -->
+    <div class="sidebar-ad" style="right: 20px;">
+        <h2>广告</h2>
+        <p>菜玩俱乐部招募会员</p>
+        <p>减少折腾，时间留给游戏。永久会员支持实时更新，支持创意工坊，更有大量D加密游戏等你玩。</p>
+        <button onclick="openQQGroup()">前往</button> <!-- 确保按钮在底部 -->
+    </div>
 
     <!-- 介绍 -->
     <section id="introduction">
@@ -441,6 +539,15 @@
 
         // 页面加载时检测时间并设置模式
         window.onload = checkTimeAndSetMode;
+
+        function showAdLink() {
+            const message = "请加入售前群（QQ）或前往购买网站。\nQQ群： https://qm.qq.com/q/5d9EXVzNOg\n购买网站： https://club.caigamer.com/?invite=18";
+            alert(message);
+        }
+
+        function openQQGroup() {
+            window.open("https://qm.qq.com/q/5d9EXVzNOg", "_blank");
+        }
     </script>
 </body>
 </html>
